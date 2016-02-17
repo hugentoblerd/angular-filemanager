@@ -19,9 +19,11 @@
             extractUrl: 'bridges/php/handler.php',
             permissionsUrl: 'bridges/php/handler.php',
 
+            searchForm: true,
             sidebar: true,
             breadcrumb: true,
             allowedActions: {
+                upload: true,
                 rename: true,
                 copy: true,
                 edit: true,
@@ -34,6 +36,10 @@
                 remove: true
             },
 
+            showSizeForDirectories: false,
+            useBinarySizePrefixes: false,
+
+            previewImagesInModal: true,
             enablePermissionsRecursive: true,
             compressAsync: true,
             extractAsync: true,
@@ -44,14 +50,14 @@
             tplPath: 'src/templates'
         };
 
-        return { 
+        return {
             $get: function() {
                 return values;
-            }, 
+            },
             set: function (constants) {
                 angular.extend(values, constants);
             }
         };
-    
+
     });
 })(angular);
